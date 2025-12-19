@@ -8,7 +8,7 @@ namespace PrimeiroProjetoCSharp
     {
         public string nome;
         public byte idade;
-
+        public double salario;
 
     }
 }

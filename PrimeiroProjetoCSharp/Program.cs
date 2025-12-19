@@ -1,29 +1,29 @@
-﻿namespace PrimeiroProjetoCSharp;
+﻿using System.Net.Http.Headers;
+
+namespace PrimeiroProjetoCSharp;
 
 internal class Program
 {
     static void Main(string[] args)
     {
 
-        Console.WriteLine();
+        Console.WriteLine("Escolha o que fazer:");
 
-        Pessoa pessoa1, pessoa2;
-        pessoa1 = new Pessoa();
-        pessoa2 = new Pessoa();
+        byte escolha = byte.Parse(Console.ReadLine());
+        Service service;
 
-        Console.WriteLine("Qual o nome da primeira pessoa: ");
-        pessoa1.nome = Console.ReadLine();
-        Console.WriteLine($"Qual a idade de {pessoa1.nome} ");
-        pessoa1.idade = byte.Parse(Console.ReadLine());
-
-        Console.WriteLine("Qual o nome da segunda pessoa: ");
-        pessoa2.nome = Console.ReadLine();
-        Console.WriteLine($"Qual a idade de {pessoa2.nome} ");
-        pessoa2.idade = byte.Parse(Console.ReadLine());
-
-        string pessoaMaisVelha = pessoa1.idade > pessoa2.idade ? pessoa1.nome : pessoa2.nome;
-
-        Console.WriteLine("A pessoa mais velha e: " + pessoaMaisVelha);
-
+        switch (escolha)
+        {
+            case 1:
+                service = new Service();
+                string pessoaMaisVelha = service.verificaMaiorIdade();
+                Console.WriteLine("A pessoa mais velha e" + pessoaMaisVelha); 
+                break;
+            case 2:
+                service = new Service();
+                double mediaSalario = service.medianaSalario();
+                Console.WriteLine("A media de salario e: " + mediaSalario.ToString("F2"));
+                break;
+        }
     }
 }
