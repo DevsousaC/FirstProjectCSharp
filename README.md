@@ -1,5 +1,7 @@
 # README
 
+![Tela inicial do projeto](./Telas/MENU.png)
+
 Este é o meu primeiro projeto desenvolvido em C# e também uma especie de documentação dessa trajetória. Cada Commit contem minhas anotações do que está funcionando e o que quero fazer em seguida.
 
 O sistema é uma aplicação de console que simula um painel de gerenciamento com operações de lógica de negócio.
@@ -16,13 +18,9 @@ Leve em consideração que esse projeto é um SandBox. Algumas escolhas podem n�
 
 ## Coisas que abordei até agora
 
-Durante o desenvolvimento, apliquei os seguintes conceitos técnicos:
-
 **Orientação a Objetos:** Separação de responsabilidades entre a classe Menu (interface) e Service (lógica).
 
-*Métodos Estáticos:* Uso de static para serviços utilitários.
-
-**Estruturas de Controle:** while para o loop principal e switch case para o roteamento de funções.
+**Estruturas de Controle:** while para o loop principal e switch case para o roteamento de funcionalidades.
 
 **Interpolação de Strings:** Formatação limpa de mensagens e valores monetários.
 
