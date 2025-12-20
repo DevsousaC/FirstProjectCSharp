@@ -7,28 +7,33 @@ namespace PrimeiroProjetoCSharp
 {
     public class Service
     {
-        public String verificaMaiorIdade()
+        public static void verificaMaiorIdade()
         {
-            Pessoa pessoa1 = new Pessoa();
-            Pessoa pessoa2 = new Pessoa();
+            Pessoa a, b;
+            a = new Pessoa();
+            b = new Pessoa();
 
-            Console.WriteLine("Voce escolheu comparar duas idades para saber quenm e mais velho");
-            Console.WriteLine("Qual o nome da primeira pessoa: ");
-            pessoa1.nome = Console.ReadLine();
-            Console.WriteLine($"Qual a idade de {pessoa1.nome} ");
-            pessoa1.idade = byte.Parse(Console.ReadLine());
+            Console.WriteLine("\nVoce escolheu comparar duas idades para saber quem e mais velho");
+            Console.WriteLine("Insira o nome da primeira pessoa");
+            Console.Write("> ");
+            a.nome = Console.ReadLine();
+            Console.WriteLine($"Insira a idade de {a.nome}");
+            Console.Write("> ");
+            a.idade = byte.Parse(Console.ReadLine());
 
-            Console.WriteLine("Qual o nome da segunda pessoa: ");
-            pessoa2.nome = Console.ReadLine();
-            Console.WriteLine($"Qual a idade de {pessoa2.nome} ");
-            pessoa2.idade = byte.Parse(Console.ReadLine());
+            Console.WriteLine("Insira o nome da segunda pessoa");
+            Console.Write("> ");
+            b.nome = Console.ReadLine();
+            Console.WriteLine($"Insira a idade de {b.nome}");
+            Console.Write("> ");
+            b.idade = byte.Parse(Console.ReadLine());
 
-            string pessoaMaisVelha = pessoa1.idade > pessoa2.idade ? pessoa1.nome : pessoa2.nome;
+            string pessoaMaisVelha = a.idade > b.idade ? a.nome : b.nome;
 
-            return pessoaMaisVelha;
+            Console.WriteLine("A pessoa mais velha e " + pessoaMaisVelha);
         }
 
-        public double medianaSalario()
+        public static double medianaSalario()
         {
             double valor1 = 0.0;
             double valor2 = 0.0;

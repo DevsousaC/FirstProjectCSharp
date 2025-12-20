@@ -1,29 +1,37 @@
-﻿using System.Net.Http.Headers;
-
-namespace PrimeiroProjetoCSharp;
+﻿namespace PrimeiroProjetoCSharp;
 
 internal class Program
 {
     static void Main(string[] args)
     {
 
-        Console.WriteLine("Escolha o que fazer:");
+        bool exit = false;
+        
+        Menu menu = new Menu();
+        menu.inicial();
 
-        byte escolha = byte.Parse(Console.ReadLine());
-        Service service;
-
-        switch (escolha)
-        {
-            case 1:
-                service = new Service();
-                string pessoaMaisVelha = service.verificaMaiorIdade();
-                Console.WriteLine("A pessoa mais velha e" + pessoaMaisVelha); 
-                break;
-            case 2:
-                service = new Service();
-                double mediaSalario = service.medianaSalario();
-                Console.WriteLine("A media de salario e: " + mediaSalario.ToString("F2"));
-                break;
+        while (!exit)
+        {  
+            byte escolha = menu.Opcoes();
+            switch (escolha)
+            {
+                case 0:
+                    menu.encerramento();
+                    break;
+                case 1:
+                    Console.Clear();
+                    Service.verificaMaiorIdade();
+                    break;
+                case 2:
+                    Console.Clear();
+                    double mediaSalario = Service.medianaSalario();
+                    Console.WriteLine("A media de salario e: " + mediaSalario.ToString("F2"));
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida! Tente novamente.");
+                    Thread.Sleep(1000);
+                    break;
+            }
         }
     }
 }
