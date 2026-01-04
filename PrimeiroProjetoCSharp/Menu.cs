@@ -30,7 +30,7 @@ namespace PrimeiroProjetoCSharp
 
         public byte Opcoes()
         {
-            List<string> opcoesDisponivel = new List<string> { "Sair", "quem tem a maior idade", "media de salario" };
+            List<string> opcoesDisponivel = new List<string> { "Sair", "Simular Clonagem de Pessoa", "media de salario", "quem alugou mais quartos hoje" };
 
             Console.WriteLine("\nEntre duas pessoas eu quero verificar...");
 

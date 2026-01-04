@@ -1,4 +1,7 @@
-﻿namespace PrimeiroProjetoCSharp;
+﻿using PrimeiroProjetoCSharp.Entities.Service;
+using PrimeiroProjetoCSharp.Entities.Model;
+
+namespace PrimeiroProjetoCSharp;
 
 internal class Program
 {
@@ -20,12 +23,15 @@ internal class Program
                     break;
                 case 1:
                     Console.Clear();
-                    Service.verificaMaiorIdade();
+                    PessoaService service = new PessoaService();
+                    Pessoa pessoaA = new Pessoa { Nome = "Diego", Atributos = new DadosFisicos { Peso = 75, Altura = 1.75 } };
+                    service.Clonagem(pessoaA);
                     break;
                 case 2:
                     Console.Clear();
-                    double mediaSalario = Service.medianaSalario();
-                    Console.WriteLine("A media de salario e: " + mediaSalario.ToString("F2"));
+                    break;
+                case 3:
+                    Console.Clear();
                     break;
                 default:
                     Console.WriteLine("Opção inválida! Tente novamente.");
