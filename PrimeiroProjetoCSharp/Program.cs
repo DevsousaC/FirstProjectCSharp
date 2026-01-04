@@ -1,5 +1,6 @@
 ﻿using PrimeiroProjetoCSharp.Entities.Service;
 using PrimeiroProjetoCSharp.Entities.Model;
+using PrimeiroProjetoCSharp.Entities.View;
 
 namespace PrimeiroProjetoCSharp;
 
@@ -8,30 +9,34 @@ internal class Program
     static void Main(string[] args)
     {
 
-        bool exit = false;
-        
+        bool executar = true;
+
         Menu menu = new Menu();
         menu.inicial();
-
-        while (!exit)
-        {  
+        
+        while (executar)
+        {
             byte escolha = menu.Opcoes();
             switch (escolha)
             {
-                case 0:
+                case 0: // Sair
                     menu.encerramento();
-                    break;
-                case 1:
+                    return;
+                case 1: // Simular Clonagem de Pessoa - Shallow Copy/Deep Copy
+                    escolha = menu.OpcoesClonagem();
+                    PessoaService pessoaService = new PessoaService();
                     Console.Clear();
-                    PessoaService service = new PessoaService();
-                    Pessoa pessoaA = new Pessoa { Nome = "Diego", Atributos = new DadosFisicos { Peso = 75, Altura = 1.75 } };
-                    service.Clonagem(pessoaA);
-                    break;
-                case 2:
-                    Console.Clear();
-                    break;
-                case 3:
-                    Console.Clear();
+                    Pessoa pessoa = new Pessoa();
+                    if (escolha == 1)
+                    {
+                        pessoaService.ClonarShallowCopy(pessoa);
+                        break;
+                    }
+                    else if (escolha == 2)
+                    {
+                        pessoaService.ClonarDeepCopy(pessoa);
+                        break;
+                    }
                     break;
                 default:
                     Console.WriteLine("Opção inválida! Tente novamente.");
